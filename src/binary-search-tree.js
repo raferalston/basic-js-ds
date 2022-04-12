@@ -98,12 +98,12 @@ class BinarySearchTree {
       return this.right
     }
     
-    let minNode = this.right
-    while (minNode.left) {
-      minNode = minNode.left
+    let maxMinNode = this.right
+    while (maxMinNode.left) {
+      maxMinNode = maxMinNode.left
     }
-    this.data = minNode.data
-    this.right = this.right.remove(minimumLargerNode.data)
+    this.data = maxMinNode.data
+    this.right = this.right.remove(maxMinNode.data)
     return this
   }
 
